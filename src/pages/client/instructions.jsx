@@ -28,17 +28,15 @@ const styles = theme => ({
 });
 
 function getSteps() {
-  return ['Select campaign settings', 'Create an ad group', 'Escolha o posto coleta', 'Quantidade de sacos'];
+  return ['Primeiro passo', 'Segundo passo', 'Vá até o ponto de destinação', 'Quantidade de sacos'];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`;
+      return `Garanta que todos os recipientes estão limpos.`;
     case 1:
-      return 'An ad group contains one or more ads which target a shared set of keywords.';
+      return 'Embale o vidro no papel adequado.';
     case 2:
       return (
         <img style={{ height: 147, width: 178, marginLeft: 14 }} alt="oi" src="https://files.slack.com/files-pri/T024ZJBML-FAJAMNCEL/image.png" />

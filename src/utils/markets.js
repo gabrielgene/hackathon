@@ -20,7 +20,7 @@ export const markets = [
     ]
   },
   {
-    name: 'Mercado do tio João',
+    name: 'SuperMarket',
     id: 3,
     end: '',
     materias: [
@@ -30,7 +30,7 @@ export const markets = [
     ]
   },
   {
-    name: 'Mercado do tio João',
+    name: 'Pazmendosa',
     id: 4,
     end: '',
     materias: [
@@ -40,7 +40,7 @@ export const markets = [
     ]
   },
   {
-    name: 'Mercado do tio João',
+    name: 'Preço Bom',
     id: 5,
     end: '',
     materias: [
@@ -50,7 +50,7 @@ export const markets = [
     ]
   },
   {
-    name: 'Mercado do tio João',
+    name: 'Mercadinho do Souza',
     id: 6,
     end: '',
     materias: [
@@ -60,7 +60,7 @@ export const markets = [
     ]
   },
   {
-    name: 'Mercado do tio João',
+    name: 'Central Supermercado',
     id: 7,
     end: '',
     materias: [
@@ -69,24 +69,4 @@ export const markets = [
       'Metal',
     ]
   },
-  {
-    name: 'Mercado do tio João',
-    id: 8,
-    end: '',
-    materias: [
-      'Vidro',
-      'Papel',
-      'Metal',
-    ]
-  },
-  {
-    name: 'Mercado do tio João',
-    id: 9,
-    end: '',
-    materias: [
-      'Vidro',
-      'Papel',
-      'Metal',
-    ]
-  }
 ]

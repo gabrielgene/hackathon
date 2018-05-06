@@ -16,6 +16,7 @@ const styles = theme => ({
     marginTop: 16,
     height: '90vh',
     textAlign: 'center',
+    backgroundColor: '#f7f7f7',
   },
   cardWrapper: {
     display: 'flex',
@@ -55,7 +56,7 @@ class Login extends React.Component {
     if (user === 'cid' && pass === '123') {
       this.props.history.push('/cidadao/home');
     } else if (user === 'coop' && pass === '123') {
-      this.props.history.push('/coop');
+      this.props.history.push('/cooperativa/dashboard');
     } else if (user === 'emp' && pass === '123') {
       this.props.history.push('/empresa');
     }
@@ -68,6 +69,7 @@ class Login extends React.Component {
     return (
       <div className={classes.cardWrapper}>
         <Card className={classes.card}>
+          <img style={{ height: 151, position: 'fixed', left: 108 }} src="https://files.slack.com/files-pri/T024ZJBML-FAK6HSATX/whatsapp_image_2018-05-06_at_2.25.35_am.jpeg" />
           <Typography className={classes.title} variant="title" gutterBottom>
             E-comuni
           </Typography>

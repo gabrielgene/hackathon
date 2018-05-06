@@ -34,10 +34,9 @@ class Menu extends React.Component {
       <div>
         {children}
         <BottomNavigation value={value} onChange={this.handleChange} showLabels className={classes.root}>
-          <BottomNavigationAction label="Postos" value="/cidadao/postos" icon={<Icon>location_on</Icon>} />
-          <BottomNavigationAction label="Perfil" value="/cidadao/perfil" icon={<Icon>person</Icon>} />
-          <BottomNavigationAction label="Agenda" value="/cidadao/agenda" icon={<Icon>date_range</Icon>} />
-          <BottomNavigationAction label="Aprenda" value="/cidadao/aprenda" icon={<Icon>school</Icon>} />
+          <BottomNavigationAction label="Dashboard" value="/cooperativa/dashboard" icon={<Icon>dashboard</Icon>} />
+          <BottomNavigationAction label="Registro" value="/cooperativa/registro" icon={<Icon>person</Icon>} />
+          <BottomNavigationAction label="Calendario" value="/cooperativa/agenda" icon={<Icon>date_range</Icon>} />
         </BottomNavigation>
       </div>
     )

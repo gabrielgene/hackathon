@@ -1,12 +1,12 @@
 import React from 'react';
 import Menu from '../client/menu';
 
-const Coop = () => (
+const Calendar = () => (
   <div>
     <Menu>
-      <h1>asdahsdu</h1>
+      <h1>Calendar</h1>
     </Menu>
   </div>
 );
 
-export default Coop;
+export default Calendar;

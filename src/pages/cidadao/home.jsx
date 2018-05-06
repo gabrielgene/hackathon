@@ -13,6 +13,7 @@ import DateIcon from '@material-ui/icons/DateRange';
 import ChatIcon from '@material-ui/icons/Chat';
 import HomeIcon from '@material-ui/icons/Home';
 import WorkIcon from '@material-ui/icons/Work';
+import ExitIcon from '@material-ui/icons/ExitToApp';
 import Divider from 'material-ui/Divider';
 import Delete from '@material-ui/icons/Delete';
 import { withRouter } from 'react-router';
@@ -88,8 +89,11 @@ class Menu extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit">
-              E-Comuni
+              eComuni
             </Typography>
+            <div>
+
+            </div>
           </Toolbar>
           <Tabs value={value} onChange={this.handleChange}>
             <Tab label="Descartar Residuos" />
@@ -200,6 +204,12 @@ class Menu extends React.Component {
                 <ListItemText primary="Horários de Coleta" />
               </ListItem>
               <Divider />
+              <ListItem onClick={() => history.push('/')}>
+                <Avatar>
+                  <ExitIcon />
+                </Avatar>
+                <ListItemText primary="Sair" />
+              </ListItem>
             </List>
           </div>
         </Drawer>

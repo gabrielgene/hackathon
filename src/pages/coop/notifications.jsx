@@ -1,12 +1,12 @@
 import React from 'react';
 import Menu from '../client/menu';
 
-const Coop = () => (
+const Notification = () => (
   <div>
     <Menu>
-      <h1>asdahsdu</h1>
+      <h1>Notification</h1>
     </Menu>
   </div>
 );
 
-export default Coop;
+export default Notification;
