@@ -74,6 +74,7 @@ class Login extends React.Component {
 
           <TextField
             id="user"
+            autoComplete="off"
             value={this.state.user}
             onChange={this.handleChange('user')}
             className={classes.textField}
@@ -81,6 +82,8 @@ class Login extends React.Component {
           />
           <TextField
             id="pass"
+            type="password"
+            autoComplete="off"
             value={this.state.pass}
             onChange={this.handleChange('pass')}
             className={classes.textField}
