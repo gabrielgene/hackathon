@@ -8,6 +8,9 @@ import MenuIcon from '@material-ui/icons/NavigateBefore';
 import TextField from 'material-ui/TextField';
 import { withStyles } from 'material-ui/styles';
 
+import 'react-chat-widget/lib/styles.css';
+import { Widget } from 'react-chat-widget';
+
 const styles = theme => ({
   button: {
     width: '90%',
@@ -37,7 +40,7 @@ const Faq = ({ classes, history }) => (
     </AppBar>
     <div className={classes.content}>
       <Typography variant="body2" gutterBottom>
-        O que acho do ecomuni ?
+        O que acho do nosso app ?
       </Typography>
       <Typography variant="body2" gutterBottom>
         Como podemos melhorar ?
@@ -46,7 +49,7 @@ const Faq = ({ classes, history }) => (
         <TextField
           className={classes.input}
           id="name"
-          label="Name"
+          label="Reporte o seu problema"
           margin="normal"
         />
       </div>
@@ -54,6 +57,7 @@ const Faq = ({ classes, history }) => (
         Enviar
         </Button>
     </div>
+    <Widget styles={{ backgroundColor: 'green'}} />
   </div>
 );
 

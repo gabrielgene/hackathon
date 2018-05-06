@@ -91,8 +91,8 @@ class Menu extends React.Component {
             <Typography variant="title" color="inherit">
               eComuni
             </Typography>
-            <div>
-
+            <div style={{ marginLeft: 90 }}>
+              EcoNicas : 7
             </div>
           </Toolbar>
           <Tabs value={value} onChange={this.handleChange}>
@@ -100,7 +100,8 @@ class Menu extends React.Component {
             <Tab label="Gerar e-voucher" />
           </Tabs>
         </AppBar>
-        {value === 0 &&
+        {
+          value === 0 &&
           <TabContainer>
             <div className={classes.tab1}>
               <List>
@@ -156,7 +157,8 @@ class Menu extends React.Component {
             </div>
           </TabContainer>
         }
-        {value === 1 &&
+        {
+          value === 1 &&
           <TabContainer>
             <div className={classes.root}>
               <List>
@@ -212,8 +214,8 @@ class Menu extends React.Component {
               </ListItem>
             </List>
           </div>
-        </Drawer>
-      </div>
+        </Drawer >
+      </div >
     );
   }
 }
