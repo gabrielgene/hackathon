@@ -12,9 +12,9 @@ import Calendar from './pages/client/calendar';
 import Learn from './pages/client/learn';
 import Coop from './pages/coop';
 import Login from './pages/generic/login';
-// import Home from './pages/client/home';
 import Instructions from './pages/client/instructions';
 import Faq from './pages/client/faq';
+import registerServiceWorker from './registerServiceWorker';
 
 import Home from './pages/cidadao/home';
 
@@ -50,4 +50,4 @@ const App = () => (
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));
-// registerServiceWorker();
+registerServiceWorker();
