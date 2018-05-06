@@ -1,11 +1,13 @@
 import React from 'react';
-import Menu from './menu';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
+import IconButton from 'material-ui/IconButton';
+import MenuIcon from '@material-ui/icons/NavigateBefore';
+import { withRouter } from 'react-router';
 
 const styles = theme => ({
   root: {
@@ -18,10 +20,13 @@ const styles = theme => ({
   },
 });
 
-const Calendar = ({ classes }) => (
-  <Menu>
+const Calendar = ({ classes, history }) => (
+  <div>
     <AppBar position="fixed" color="primary">
       <Toolbar>
+        <IconButton color="inherit" aria-label="Menu" onClick={() => history.goBack()}>
+          <MenuIcon />
+        </IconButton>
         <Typography variant="title" color="inherit">
           Agenda de coleta de lixo
         </Typography>
@@ -68,7 +73,8 @@ const Calendar = ({ classes }) => (
         </TableBody>
       </Table>
     </Paper>
-  </Menu>
+
+  </div>
 );
 
-export default withStyles(styles)(Calendar);
+export default withStyles(styles)(withRouter(Calendar));

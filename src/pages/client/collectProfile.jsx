@@ -7,11 +7,7 @@ import IconButton from 'material-ui/IconButton';
 import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
-import List, { ListItem, ListItemText } from 'material-ui/List';
-import Avatar from 'material-ui/Avatar';
-import ImageIcon from '@material-ui/icons/Image';
-import WorkIcon from '@material-ui/icons/Work';
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import Snackbar from 'material-ui/Snackbar';
 import { withRouter } from 'react-router';
 import { markets } from '../../utils/markets';
 
@@ -36,54 +32,84 @@ const styles = {
 };
 
 
-const CollectProfile = ({ classes, history, match }) => (
-  <div>
-    <AppBar position="fixed" color="primary">
-      <Toolbar>
-        <IconButton color="inherit" aria-label="Back" onClick={() => history.goBack()}>
-          <Icon>navigate_before</Icon>
-        </IconButton>
-        <Typography variant="title" color="inherit">
-          {markets.filter(value =>
-            value.id.toString() === match.params.name)[0].name
-          }
-        </Typography>
-      </Toolbar>
-    </AppBar>
+class CollectProfile extends React.Component {
+  state = {
+    open: false,
+  }
 
-    <div className={classes.cardWrapper}>
-      <Card className={classes.card}>
-        <CardMedia
-          className={classes.media}
-          image="https://media-cdn.tripadvisor.com/media/photo-s/0c/9e/02/00/mercadinho.jpg"
-          title="Contemplative Reptile"
+  handleClick = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  }
+
+  render() {
+    const { classes, history, match } = this.props;
+    return (
+      <div>
+        <AppBar position="fixed" color="primary">
+          <Toolbar>
+            <IconButton color="inherit" aria-label="Back" onClick={() => history.goBack()}>
+              <Icon>navigate_before</Icon>
+            </IconButton>
+            <Typography variant="title" color="inherit">
+              {markets.filter(value =>
+                value.id.toString() === match.params.name)[0].name
+              }
+            </Typography>
+          </Toolbar>
+        </AppBar>
+
+        <div className={classes.cardWrapper}>
+          <Card className={classes.card}>
+            <CardMedia
+              className={classes.media}
+              image="https://media-cdn.tripadvisor.com/media/photo-s/0c/9e/02/00/mercadinho.jpg"
+              title=""
+            />
+            <CardContent>
+              <Typography gutterBottom variant="headline" component="h2">
+                Lizard
+              </Typography>
+              <Typography component="p">
+                {markets.filter(value =>
+                  value.id.toString() === match.params.name)[0].end
+                }
+              </Typography>
+              <Typography component="p">
+                Recebemos residuos: Vidro, Papel, Plástico
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small" color="primary" onClick={this.handleClick}>
+                Gerar e- vouncher
+              </Button>
+            </CardActions>
+          </Card>
+        </div>
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          open={this.state.open}
+          autoHideDuration={1500}
+          onClose={this.handleClose}
+          SnackbarContentProps={{
+            'aria-describedby': 'message-id',
+          }}
+          message={<span id="message-id">Seu e-vouncher é SD5I9</span>}
+          action={[
+            <Button key="1" color="secondary" size="small" onClick={this.handleClose}>
+              Copiar
+            </Button>
+          ]}
         />
-        <CardContent>
-          <Typography component="p">
-            {markets.filter(value =>
-              value.id.toString() === match.params.name)[0].end
-            }
-          </Typography>
-          <div className={classes.root}>
-            <List>
-              <ListItem>
-                <Avatar>
-                  <ImageIcon />
-                </Avatar>
-                <ListItemText primary="Papel" />
-              </ListItem>
-              <ListItem>
-                <Avatar>
-                  <WorkIcon />
-                </Avatar>
-                <ListItemText primary="Plástico" />
-              </ListItem>
-            </List>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  </div>
-);
+      </div>
+    )
+  }
+}
 
 export default withStyles(styles)(withRouter(CollectProfile));
